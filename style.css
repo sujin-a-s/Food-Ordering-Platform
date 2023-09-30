@@ -1,5 +1,43 @@
-#container{
-    background-color: red;
-    display: inline-block;
+ .header{
+    display: flex;
+    justify-content :space-between;
+    margin : 10px; 
+    border : 10px solid black;
+    color: white;
+    background-color: rgb(69, 5, 5);
+ }
+ 
+ .nav-items > ul{
+    list-style-type: none;
+    display: flex;
+}
+ .nav-items > ul >li{
+    padding: 10px
+ } 
+
+.logo{
+    width:100px 
+}
+
+.card{
+    width:200px;
+    border:5px solid rgb(69, 5, 5);
+    padding:10px;
+    margin:10px;
+    color: black;
+    background-color: rgb(188, 180, 180);
     
+  
+}
+
+.card > img {
+    width:200px;
+    height:150px
+  
+}
+
+.Restaurant-List{
+    display:flex;
+    flex-wrap:wrap
+
 }
