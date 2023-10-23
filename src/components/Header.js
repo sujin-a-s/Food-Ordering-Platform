@@ -1,4 +1,5 @@
-import {useState} from "react";  
+import {useState} from "react";
+//import Logo from "../assets/ing/pollos.img" 
 
 const isLoggedIn = () => {
     //API call to check the authentication

@@ -26,23 +26,25 @@ app.render(<AppLayout/>);
 
 
 
-//named import
+// //named import
 
-    /**
-     * Header
-     *    - Logo
-     *    - Nav Items(Right Items)
-     *    - Cart
-     * Body
-     *    - Search bar
-     *    - RestaurantList
-     *         -RestuarantCard
-     *              - Image
-     *              - Name
-     *              - Rating
-     *              - cusines
-     * Footer
-     * - Links
-     * - Copyright
-     * 
-     */
+//     /**
+//      * Header
+//      *    - Logo
+//      *    - Nav Items(Right Items)
+//      *    - Cart
+//      * Body
+//      *    - Search bar
+//      *    - RestaurantList
+//      *         -RestuarantCard
+//      *              - Image
+//      *              - Name
+//      *              - Rating
+//      *              - cusines
+//      * Footer
+//      * - Links
+//      * - Copyright
+//      * 
+//      */
+
+
