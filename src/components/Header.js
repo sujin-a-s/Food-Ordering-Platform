@@ -1,17 +1,14 @@
 import {useState} from "react";
-//import Logo from "../assets/ing/pollos.img" 
-
-const isLoggedIn = () => {
-    //API call to check the authentication
-    return false;
-};
+import Logo from "../assets/img/pollos.jpg" ;
+import {Link} from "react-router-dom";
+ 
 
 const Title = () => (
     <a href="/">  
       <img 
           className="logo"
           alt="logo"
-          src="https://tse3.mm.bing.net/th?id=OIP.lJ2OjMJTvyGkut3KwJjfLgHaHa&pid=Api&P=0&h=180"
+          src={Logo}
       />
       </a>
       )
@@ -23,11 +20,22 @@ const Header = () =>{
         <div className="header">
             <Title/>
             <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
+                <ul>                   
+                    <li>
+                    <Link to="/">Home</Link>
+                    </li>
+                    
+                    <li>
+                    <Link to="/about">About</Link>
+                    </li>
+                    
+\                   <li>
+                    <Link to="/contact">Contact</Link>
+                    </li>
+
+                    <li>
+                    <Link to="/">Cart</Link>
+                    </li>
                 </ul>
             </div>
             {isLoggedIn ? (

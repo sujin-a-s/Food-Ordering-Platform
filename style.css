@@ -8,12 +8,13 @@
     margin : 10px; 
     border : 2px solid black;
     color: white;
-    background-color: 
+    background-color: whitesmoke
  }
  
  .nav-items > ul{
     list-style-type: none;
     display: flex;
+    color:black
 }
  .nav-items > ul >li{
     padding: 10px
@@ -47,7 +48,30 @@
     display:flex;
     flex-wrap:wrap;
     background-color:rgb(252, 248, 248);
-    display:flex;
-
+   
 } 
 
+.shimmer-card{
+    width:200px;
+    height:200px;
+    background: lightgray;
+    margin:20px;
+    display:flex;
+    flex-wrap:wrap;
+    height:355px
+}
+
+.restaurant-list{
+    display:flex;
+    flex-wrap:wrap;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+   
+} 
+.menu-items{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+   
+}
