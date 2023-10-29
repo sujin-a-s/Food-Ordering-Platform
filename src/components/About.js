@@ -20,7 +20,7 @@ class About extends Component {
       <div>
         <h2>About Us Page</h2>
         
-        <ProfileFunctional />
+        <ProfileClass />
         
       </div>  
       

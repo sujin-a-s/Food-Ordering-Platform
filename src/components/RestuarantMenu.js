@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import { IMG_CDN_URL } from "../config";
 import Shimmer from "./Shimmer";
 import { MENU_ITEMS_API } from "../config";
+import useRestaurantinfo from "../utils/useRestaurantMenu";
  
 
 
@@ -11,20 +12,12 @@ const RestaurantMenu = () => {
     const {resId} = useParams();
     
 
-    const [restaurantinfo,setRestaurantinfo] = useState(null);
+    //const [restaurantinfo,setRestaurantinfo] = useState(null);
+
+    const restaurantinfo = useRestaurantinfo(resId);
 
 
-    useEffect(() =>{
-        getRestaurantInfo();
-    },[]);
 
-    async function getRestaurantInfo(){
-        //const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.4171168&lng=77.8252923&restaurantId="+resId+"&catalog_qa=undefined&submitAction=ENTER");
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId="+resId+"&catalog_qa=undefined&submitAction=ENTER");
-        const json = await data.json();
-        console.log(json)
-        setRestaurantinfo(json);
-     }
 //
      
     //=>instead of narrwog down your api path upfront in the state variable , you can deconstruct it like this according to your current need 
