@@ -6,6 +6,8 @@ import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 import About from "./components/About.js";
 import Error from "./components/Error.js";
+import ProfileClass from "./components/ProfileClass.js";
+import ProfileFunctional from "./components/ProfileFunctional.js";
 import Contact from "./components/Contact.js";
 import RestaurantMenu from "./components/RestuarantMenu.js";
 import {  RouterProvider, Outlet, createBrowserRouter } from "react-router-dom";
@@ -28,7 +30,13 @@ const appRouter = createBrowserRouter([
     children:[
       {
         path:"/about",
-        element:<About/>
+        element:<About/>,
+        children:[
+        {
+          path:"profile",
+          element:<ProfileClass/>
+        }
+        ]
       },
       {
         path:"/contact",
