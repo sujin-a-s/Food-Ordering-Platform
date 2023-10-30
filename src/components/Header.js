@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Logo from "../assets/img/pollos.jpg" ;
 import {Link} from "react-router-dom";
+
  
 
 const Title = () => (
@@ -15,6 +16,8 @@ const Title = () => (
 
 const Header = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
+
+
 
     return (
         <div className="header">
@@ -35,6 +38,10 @@ const Header = () =>{
 
                     <li>
                     <Link to="/">Cart</Link>
+                    </li>
+
+                    <li>
+                    <Link to="/instamart">Instamart</Link>
                     </li>
                 </ul>
             </div>
