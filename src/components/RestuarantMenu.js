@@ -2,8 +2,9 @@ import {useParams} from "react-router-dom";
 import { useEffect,useState } from "react";
 import { IMG_CDN_URL } from "../config";
 import Shimmer from "./Shimmer";
-import { MENU_ITEMS_API } from "../config";
 import useRestaurantinfo from "../utils/useRestaurantMenu";
+
+
  
 
 
@@ -26,7 +27,7 @@ const RestaurantMenu = () => {
      const restaurantInfo = restaurantinfo?.data?.cards[0]?.card?.card?.info;
      const { name, areaName, costForTwoMessage, avgRating, cloudinaryImageId } = restaurantInfo || {};
 
-     const menuInfo = restaurantinfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[8].card.card
+     const menuInfo = restaurantinfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[4].card.card
      const { itemCards } = menuInfo || {};
 
     return!restaurantInfo ? (
