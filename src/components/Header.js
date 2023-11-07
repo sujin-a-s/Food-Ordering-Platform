@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 const Title = () => (
     <a href="/">  
       <img 
-          className="logo"
+          className="h-28 px-2"
           alt="logo"
           src={Logo}
       />
@@ -20,27 +20,27 @@ const Header = () =>{
 
 
     return (
-        <div className="header">
+        <div className="flex justify-between bg-orange-300 shadow-xl">
             <Title/>
             <div className="nav-items">
-                <ul>                   
-                    <li>
+                <ul className="flex py-10">                   
+                    <li className="px-2">
                     <Link to="/">Home</Link>
                     </li>
                     
-                    <li>
+                    <li className="px-2">
                     <Link to="/about">About</Link>
                     </li>
                     
-\                   <li>
+                    <li className="px-2">
                     <Link to="/contact">Contact</Link>
                     </li>
 
-                    <li>
+                    <li className="px-2">
                     <Link to="/">Cart</Link>
                     </li>
 
-                    <li>
+                    <li className="px-2">
                     <Link to="/instamart">Instamart</Link>
                     </li>
                 </ul>
