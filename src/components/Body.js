@@ -80,7 +80,7 @@ const Body = () =>{
           search</button>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         {filteredRestaurants.map((restaurant) => {
             return(
             <Link 

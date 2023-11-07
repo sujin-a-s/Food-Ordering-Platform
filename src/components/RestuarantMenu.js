@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
 
 
 
-//
+
      
     //=>instead of narrwog down your api path upfront in the state variable , you can deconstruct it like this according to your current need 
     //=>and it is a best practice to deconstruct things like this ,By adding these null/undefined checks, you prevent the TypeError by ensuring 
@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
                 <h3>{costForTwoMessage}</h3>
             </div>
 
-            <div className="dishes">
+            <div className="dishes ">
                 <h1>dishes</h1>
                 <ul>
                 {itemCards.map((item) => (
