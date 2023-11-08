@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard.js";
 import {restaurantList} from "../config.js";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import Shimmer from  "./Shimmer";
 import {Link} from "react-router-dom";
 import { filterData } from "../utils/Helper.js";
 import useBody from "../utils/useBody.js";
 import useOnline from "../utils/useonilne.js"
+import UserContext from "../utils/UserContext.js";
 
 const Body = () =>{
 
@@ -13,6 +14,7 @@ const Body = () =>{
     const [allRestaurants,setAllRestaurants] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]); 
     const [searchText, setSearchText] = useState("");
+    const {user,setUser} = useContext(UserContext);
 
     useEffect(()=>{
         //   //API call
@@ -78,6 +80,12 @@ const Body = () =>{
           }}
           >
           search</button>
+          <input value={user.name} onChange={
+            e => setUser({
+              name : e.target.value,
+              email : "newemail@gmail.com"
+            })
+          }></input>
       </div>
 
       <div className="flex flex-wrap ">

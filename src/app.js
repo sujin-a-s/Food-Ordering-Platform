@@ -10,18 +10,32 @@ import ProfileFunctional from "./components/ProfileFunctional.js";
 import Contact from "./components/Contact.js";
 import RestaurantMenu from "./components/RestuarantMenu.js";
 import {  RouterProvider, Outlet, createBrowserRouter } from "react-router-dom";
-import {lazy,Suspense} from "react"
+import {lazy,Suspense,useState} from "react"
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext.js";
 
 const Instamart = lazy(() => import("./components/Instamart.js"));
 
 
 const AppLayout = ()=>{
+
+  const [user,setUser] = useState({
+    name: "sujin",
+    email: "sujin@gamil.com"
+  });
+
   return(
     <>
+      <UserContext.Provider
+        value={{
+          user : user,
+          setUser : setUser,
+        }}
+      >
       <Header/>
       <Outlet/>
       <Footer/>
+      </UserContext.Provider>
     </>
   );
 };
