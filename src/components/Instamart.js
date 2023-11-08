@@ -1,4 +1,5 @@
 import { useState } from "react";
+
  const Section= ({title,description,isVisible,setIsVisible}) => { 
 
     // const [isVisible,setIsVisible] = useState(false);
@@ -28,11 +29,7 @@ import { useState } from "react";
  }
  
  const Instamart = () => {
-    const [sectionConfig,setSectionConfig] = useState({
-        showAbout: true,
-        showTeam: false,
-        showCareer: false
-    });
+    const [visibleSection,setVisibleSection] = useState("about");
     return(
         <div>
             <>
@@ -42,27 +39,21 @@ import { useState } from "react";
                 description={
                     "The placeholder text, beginning with the line Lorem ipsum dolor sit amet, consectetur adipiscing elit, looks like Latin because in its youth, centuries ago, it was Latin"
                 }
-                isVisible={sectionConfig.showAbout}
+                isVisible={visibleSection==="about"}
                 setIsVisible={()=>
-                    setSectionConfig({
-                        showAbout: true,
-                        showTeam: false,
-                        showCareer: false
-                    })}
+                    setVisibleSection("about")
+                }
              /> 
              
              <Section 
-                title={"Team Instamart"} 
+                 title={"Team Instamart"} 
                 description={
                     "The placeholder text, beginning with the line Lorem ipsum dolor sit amet, consectetur adipiscing elit, looks like Latin because in its youth, centuries ago, it was Latin"
                 }   
-                isVisible={sectionConfig.showTeam}
+                isVisible={visibleSection==="team"}
                 setIsVisible={()=>
-                    setSectionConfig({
-                        showAbout: false,
-                        showTeam: true,
-                        showCareer: false
-                    })}
+                    setVisibleSection("team")
+                }
              /> 
              
              <Section 
@@ -70,13 +61,9 @@ import { useState } from "react";
                 description={
                     "The placeholder text, beginning with the line Lorem ipsum dolor sit amet, consectetur adipiscing elit, looks like Latin because in its youth, centuries ago, it was Latin"
                 }
-                isVisible={sectionConfig.showCareer}
+                isVisible={visibleSection==="career"}
                 setIsVisible={()=>
-                    setSectionConfig({
-                        showAbout: false,
-                        showTeam: false,
-                        showCareer: true
-                    })}
+                    setVisibleSection("career")}
              />
              </>
         </div>
