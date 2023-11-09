@@ -16,6 +16,7 @@ const Title = () => (
       )
 
 const Header = () =>{
+    
     const [isLoggedIn,setIsLoggedIn] = useState(false);
 
     const isOnline = useOnline();
@@ -47,7 +48,7 @@ const Header = () =>{
                     </li>
 
                     <li className="px-2">
-                    <Link to="/">Cart- {cartItems.length} items</Link>
+                    <Link to="/cart">Cart- {cartItems.length} items</Link>
                     </li>
                 </ul>
             </div>

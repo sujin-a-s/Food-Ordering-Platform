@@ -12,6 +12,7 @@ import RestaurantMenu from "./components/RestuarantMenu.js";
 import {  RouterProvider, Outlet, createBrowserRouter } from "react-router-dom";
 import {lazy,Suspense,useState} from "react"
 import Shimmer from "./components/Shimmer";
+import Cart from "./components/Cart.js";
 import UserContext from "./utils/UserContext.js";
 import {Provider} from "react-redux";
 import store from "./utils/store.js";
@@ -77,7 +78,11 @@ const appRouter = createBrowserRouter([
             <Instamart/>
           </Suspense>      
         )
-      }
+      },
+      {
+        path:"/cart",
+        element:<Cart/>
+      },
 
     ]
   }
