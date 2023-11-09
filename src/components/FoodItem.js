@@ -10,7 +10,7 @@ const FoodItem = ({name,description,imageId,price})=>{
         <img src={IMG_CDN_URL+imageId }className="h-40 w-full h-40 object-cover mb-4"/>
         <h2 className="font-bold text-xl">{name}</h2>
         <br></br>
-        <h4>{description}</h4>
+        {/* <h4>{description}</h4> */}
         <h4>Rupees: {price/100}</h4>
       </div>
     );
