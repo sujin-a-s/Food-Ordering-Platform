@@ -13,6 +13,8 @@ import {  RouterProvider, Outlet, createBrowserRouter } from "react-router-dom";
 import {lazy,Suspense,useState} from "react"
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext.js";
+import {Provider} from "react-redux";
+import store from "./utils/store.js";
 
 const Instamart = lazy(() => import("./components/Instamart.js"));
 
@@ -25,7 +27,7 @@ const AppLayout = ()=>{
   });
 
   return(
-    <>
+    <Provider store={store} >
       <UserContext.Provider
         value={{
           user : user,
@@ -36,7 +38,7 @@ const AppLayout = ()=>{
       <Outlet/>
       <Footer/>
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 

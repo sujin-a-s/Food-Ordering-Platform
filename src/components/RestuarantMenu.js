@@ -15,19 +15,19 @@ const RestaurantMenu = () => {
 
     //const [restaurantinfo,setRestaurantinfo] = useState(null);
 
+    
     const restaurantinfo = useRestaurantinfo(resId);
-
-
-
-
      
+
     //=>instead of narrwog down your api path upfront in the state variable , you can deconstruct it like this according to your current need 
     //=>and it is a best practice to deconstruct things like this ,By adding these null/undefined checks, you prevent the TypeError by ensuring 
     //...that you're attempting to destructure properties from a defined object, not from undefined. This guards against the situation where any part of the nested object might be undefined.
+
+
      const restaurantInfo = restaurantinfo?.data?.cards[0]?.card?.card?.info;
      const { name, areaName, costForTwoMessage, avgRating, cloudinaryImageId } = restaurantInfo || {};
 
-     const menuInfo = restaurantinfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[4].card.card
+     const menuInfo = restaurantinfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card
      const { itemCards } = menuInfo || {};
 
     return!restaurantInfo ? (

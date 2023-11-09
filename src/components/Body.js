@@ -61,7 +61,7 @@ const Body = () =>{
       <Shimmer/> 
     ) : (
       <>
-      <div className="my-0.5  bg-orange-100">
+      <div className="my-0.5  bg-violet-100">
         <input 
             type="text" 
             className="search-input p-2 focus:bg-slate-200"
@@ -73,7 +73,7 @@ const Body = () =>{
             }}
         />
         <button
-          className="p-2 m-2 bg-orange-900 text-white rounded hover:bg-neutral-600"
+          className="p-2 m-2 bg-slate-800 text-white rounded hover:bg-neutral-600"
           onClick={()=>{
             const data = filterData(searchText,allRestaurants);
             setFilteredRestaurants(data);
@@ -92,7 +92,7 @@ const Body = () =>{
         {filteredRestaurants.map((restaurant) => {
             return(
             <Link 
-              to={"/restaurant/"+ restaurant.info}
+              to={"/restaurant/"+ restaurant?.info?.id}
               key={restaurant.data}>
               <RestaurantCard {...restaurant.info} key={restaurant.info.id}/> 
             </Link>

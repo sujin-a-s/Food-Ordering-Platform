@@ -23,7 +23,7 @@ const Header = () =>{
 
      
     return (
-        <div className="flex justify-between bg-orange-300 shadow-xl">
+        <div className="flex justify-between bg-purple-950 text-white shadow-xl">
             <Title/>
             <div className="nav-items">
                 <ul className="flex py-10">                   
@@ -48,7 +48,7 @@ const Header = () =>{
                     </li>
                 </ul>
             </div>
-            <h1>{isOnline ? "✔️" : "❌"}</h1>
+            {/* <h1>{isOnline ? "✔️" : "❌"}</h1> */}
             <span className="p-10 font-bold">{user.name}</span>
             {isLoggedIn ? (
                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
