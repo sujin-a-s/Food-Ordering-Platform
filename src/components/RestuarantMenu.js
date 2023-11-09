@@ -21,8 +21,8 @@ const RestaurantMenu = () => {
 
     const dispatch = useDispatch();
 
-    const handleAddItem = ()=>{
-        dispatch(addItem("Grapes"));
+    const addFoodItem = (item) => {
+        dispatch(addItem(item))
     }
      
 
@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
         <Shimmer />
     ) : (   
         <>
-        <div className="menu-items">     
+        <div className="menu-items flex">     
             <div className="menu">
                 <h1>Restuarant id:{resId}</h1> 
                 <h2>{name}</h2>
@@ -52,20 +52,20 @@ const RestaurantMenu = () => {
             </div>
 
             <div>
-                <button 
-                    className="p-2 m-5 bg-slate-400" 
-                    onClick={()=> handleAddItem()}
-                >
-                    Add Item
-                </button>
+
             </div>
 
-            <div className="dishes ">
+            <div className="dishes p-5 ">
                 <h1>dishes</h1>
                 <ul>
                 {itemCards.map((item) => (
                     <li key={item?.card?.info?.id}>
-                        {item?.card?.info?.name} 
+                        {item?.card?.info?.name} - 
+                        <button 
+                            className="p-1 bg-green-100" 
+                            onClick={()=>addFoodItem(item)}
+                        >
+                        add</button>
                         
                         {/* {item?.card?.info?.price}  */}
                     </li>
