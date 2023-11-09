@@ -3,6 +3,7 @@ import Logo from "../assets/img/pollos.jpg" ;
 import {Link} from "react-router-dom";
 import useOnline from "../utils/useonilne";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => (
     <a href="/">  
@@ -20,6 +21,8 @@ const Header = () =>{
     const isOnline = useOnline();
 
     const {user} = useContext(UserContext)
+
+    const cartItems = useSelector(store => store.cart.items)
 
      
     return (
@@ -40,11 +43,11 @@ const Header = () =>{
                     </li>
 
                     <li className="px-2">
-                    <Link to="/">Cart</Link>
+                    <Link to="/instamart">Instamart</Link>
                     </li>
 
                     <li className="px-2">
-                    <Link to="/instamart">Instamart</Link>
+                    <Link to="/">Cart- {cartItems.length} items</Link>
                     </li>
                 </ul>
             </div>
