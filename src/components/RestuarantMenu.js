@@ -3,7 +3,8 @@ import { useEffect,useState } from "react";
 import { IMG_CDN_URL } from "../config";
 import Shimmer from "./Shimmer";
 import useRestaurantinfo from "../utils/useRestaurantMenu";
-
+import { addItem } from "../utils/cartSlice.js";
+import { useDispatch } from "react-redux";
 
  
 
@@ -15,8 +16,14 @@ const RestaurantMenu = () => {
 
     //const [restaurantinfo,setRestaurantinfo] = useState(null);
 
-    
+
     const restaurantinfo = useRestaurantinfo(resId);
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = ()=>{
+        dispatch(addItem("Grapes"));
+    }
      
 
     //=>instead of narrwog down your api path upfront in the state variable , you can deconstruct it like this according to your current need 
@@ -42,6 +49,15 @@ const RestaurantMenu = () => {
                 <h3>{areaName}</h3>
                 <h3>{avgRating}</h3>
                 <h3>{costForTwoMessage}</h3>
+            </div>
+
+            <div>
+                <button 
+                    className="p-2 m-5 bg-slate-400" 
+                    onClick={()=> handleAddItem()}
+                >
+                    Add Item
+                </button>
             </div>
 
             <div className="dishes ">
