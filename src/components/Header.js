@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 const Title = () => (
     <a href="/">  
       <img 
+          data-testid="logo"
+          id=""
           className="h-28 px-2"
           alt="logo"
           src={Logo}
@@ -47,13 +49,13 @@ const Header = () =>{
                     <Link to="/instamart">Instamart</Link>
                     </li>
 
-                    <li className="px-2">
+                    <li className="px-2" data-testid="cart">
                     <Link to="/cart">Cart- {cartItems.length} items</Link>
                     </li>
                 </ul>
             </div>
-            {/* <h1>{isOnline ? "✔️" : "❌"}</h1> */}
-            <span className="p-10 font-bold">{user.name}</span>
+            <h1 data-testid="online-status">{isOnline ? "✔️" : "❌"}</h1>
+            {/* <span className="p-10 font-bold">{user.name}</span> */}
             {isLoggedIn ? (
                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
             ) : (

@@ -14,7 +14,7 @@ const RestaurantCard = ({name,cuisines,cloudinaryImageId,avgRating})=>{
         <br></br>
         <h4>Cuisines: {cuisinesString}</h4>
         <h4>{avgRating} stars</h4>
-        <h5 className="font-bold">{user.name} - {user.email}</h5>
+        {/* <h5 className="font-bold">{user.name} - {user.email}</h5> */}
       </div>
     );
   }

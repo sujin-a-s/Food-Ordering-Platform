@@ -1,6 +1,6 @@
 const Footer = () =>{
     return(
-      <h4>Footer</h4>
+      <h4 data-testid="footer">Footer</h4>
     )
   }
 

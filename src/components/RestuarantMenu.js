@@ -57,11 +57,12 @@ const RestaurantMenu = () => {
 
             <div className="dishes p-5 ">
                 <h1>dishes</h1>
-                <ul>
+                <ul data-testid="menu">
                 {itemCards.map((item) => (
                     <li key={item?.card?.info?.id}>
                         {item?.card?.info?.name} - 
                         <button 
+                            data-testid="addBtn"
                             className="p-1 bg-green-100" 
                             onClick={()=>addFoodItem(item)}
                         >
