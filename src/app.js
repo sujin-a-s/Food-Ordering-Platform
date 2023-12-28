@@ -20,28 +20,33 @@ import store from "./utils/store.js";
 const Instamart = lazy(() => import("./components/Instamart.js"));
 
 
-const AppLayout = ()=>{
-
-  const [user,setUser] = useState({
+const AppLayout = () => {
+  const [user, setUser] = useState({
     name: "sujin",
     email: "sujin@gamil.com"
   });
 
-  return(
-    <Provider store={store} >
+  return (
+    <Provider store={store}>
       <UserContext.Provider
         value={{
-          user : user,
-          setUser : setUser,
+          user: user,
+          setUser: setUser,
         }}
       >
-      <Header/>
-      <Outlet/>
-      <Footer/>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <div className="flex-1">
+            {/* Outlet content */}
+            <Outlet />
+          </div>
+          <Footer />
+        </div>
       </UserContext.Provider>
     </Provider>
   );
 };
+
 
 const appRouter = createBrowserRouter([
   {

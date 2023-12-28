@@ -1,5 +1,5 @@
 import {useState,useContext} from "react";
-import Logo from "../assets/img/pollos.jpg" ;
+import Logo from "../assets/img/swiggy.png" ;
 import {Link} from "react-router-dom";
 import useOnline from "../utils/useonilne";
 import UserContext from "../utils/UserContext";
@@ -10,7 +10,7 @@ const Title = () => (
       <img 
           data-testid="logo"
           id=""
-          className="h-28 px-2"
+          className="h-20 px-2 pl-2 my-2"
           alt="logo"
           src={Logo}
       />
@@ -29,7 +29,7 @@ const Header = () =>{
     console.log(cartItems)
      
     return (
-        <div className="flex justify-between bg-purple-950 text-white shadow-xl">
+        <div className="flex justify-between  text-black shadow-xl">
             <Title/>
             <div className="nav-items">
                 <ul className="flex py-10">                   
@@ -54,7 +54,7 @@ const Header = () =>{
                     </li>
                 </ul>
             </div>
-            <h1 data-testid="online-status">{isOnline ? "✔️" : "❌"}</h1>
+            <h1 className="py-10" data-testid="online-status">{isOnline ? "🟢" : "❌"}</h1>
             {/* <span className="p-10 font-bold">{user.name}</span> */}
             {isLoggedIn ? (
                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
@@ -67,3 +67,7 @@ const Header = () =>{
 };
 
 export default Header;
+
+
+
+
