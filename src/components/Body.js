@@ -28,9 +28,9 @@ const Body = () =>{
           //const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.3678791&lng=77.9293239&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
           const json = await data.json();
           console.log(json);
-          setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+          setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
           //console.log(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-          setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+          setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
           //console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name)
               // const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.664325&lng=78.1460142&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
               // const json = await data.json();
@@ -75,7 +75,7 @@ const Body = () =>{
         />
         <button
           data-testid="search-btn"
-          className="p-2 m-2 bg-slate-800 text-white  hover:bg-neutral-600"
+          className="p-2 m-2 bg-orange-500 text-white  hover:bg-neutral-600"
           onClick={()=>{
             const data = filterData(searchText,allRestaurants);
             setFilteredRestaurants(data);
@@ -90,7 +90,7 @@ const Body = () =>{
           }></input> */}
       </div>
 
-      <div className="flex flex-wrap " data-testid="res-list">
+      <div className="flex flex-wrap ml-8 mt-6" data-testid="res-list">
         {filteredRestaurants.map((restaurant) => {
             return(
             <Link 
