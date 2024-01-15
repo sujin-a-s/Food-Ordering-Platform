@@ -65,7 +65,7 @@ const Body = () =>{
         <input 
             data-testid="search-input"
             type="text" 
-            className=" shadow-md search-input p-2 focus:bg-slate-200"
+            className=" shadow-md search-input p-2 focus:bg-slate-200 mx-4"
             placeholder="Search"
             value={searchText}
             onChange={(e)=>{
