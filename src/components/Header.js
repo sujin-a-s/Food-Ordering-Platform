@@ -4,13 +4,14 @@ import {Link} from "react-router-dom";
 import useOnline from "../utils/useonilne";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { FaUserCircle } from "react-icons/fa";
 
 const Title = () => (
     <a href="/">  
       <img 
           data-testid="logo"
           id=""
-          className="h-20 px-2 pl-2 my-2"
+          className="h-12 px-2 pl-2 my-2"
           alt="logo"
           src={Logo}
       />
@@ -29,40 +30,32 @@ const Header = () =>{
     console.log(cartItems)
      
     return (
-        <div className="flex justify-between  text-black shadow-xl">
-            <Title/>
-            <div className="nav-items">
-                <ul className="flex py-10">                   
-                    <li className="px-2">
-                    <Link to="/">Home</Link>
+        <div className="flex items-center justify-between bg-gray-800 text-white shadow-md p-3">
+            <Title />
+            <nav className="flex items-center">
+                <ul className="flex space-x-4">
+                    <li>
+                        <Link className="hover:text-yellow-300" to="/">Home</Link>
                     </li>
-                    
-                    <li className="px-2">
-                    <Link to="/about">About</Link>
+                    <li>
+                        <Link className="hover:text-yellow-300" to="/about">About</Link>
                     </li>
-                    
-                    <li className="px-2">
-                    <Link to="/contact">Contact</Link>
+                    <li>
+                        <Link className="hover:text-yellow-300" to="/contact">Contact</Link>
                     </li>
-
-                    <li className="px-2">
-                    <Link to="/instamart">Instamart</Link>
+                    <li>
+                        <Link className="hover:text-yellow-300" to="/instamart">Instamart</Link>
                     </li>
-
-                    <li className="px-2" data-testid="cart">
-                    <Link to="/cart">Cart- {cartItems.length} items</Link>
+                    <li>
+                        <Link className="hover:text-yellow-300" to="/cart">Cart ({cartItems.length})</Link>
                     </li>
                 </ul>
+            </nav>
+            <div className="flex items-center space-x-4">
+                {/* Avatar Icon */}
+                <FaUserCircle className="text-2xl h-10 w-8 cursor-pointer hover:text-yellow-300" />
             </div>
-            <h1 className="py-10" data-testid="online-status">{isOnline ? "🟢" : "❌"}</h1>
-            {/* <span className="p-10 font-bold">{user.name}</span> */}
-            {isLoggedIn ? (
-                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-            ) : (
-                <button onClick={() => setIsLoggedIn(true)}>Login</button>
-            )}
         </div>
-                 
     );
 };
 

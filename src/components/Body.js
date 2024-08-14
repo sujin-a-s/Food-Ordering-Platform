@@ -17,26 +17,16 @@ const Body = () =>{
     const {user,setUser} = useContext(UserContext);
 
     useEffect(()=>{
-        //   //API call
           getRestaurants();
         },[])
     
         async function getRestaurants(){
-          //koramangala api
           const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-          //tgode api
-          //const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.3678791&lng=77.9293239&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
           const json = await data.json();
-          console.log(json);
+          console.log("details of all the res",json);
           setAllRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-          //console.log(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
           setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-          //console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name)
-              // const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.664325&lng=78.1460142&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-              // const json = await data.json();
-              // //console.log(json )
-              // setAllRestaurants( json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants );
-              // setFilteredRestaurants( json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants );
+
         }
 
         const isOnline = useOnline();
@@ -44,53 +34,38 @@ const Body = () =>{
         if (!isOnline){
           return <h1> Offline , please check your internet connection </h1>
         }
-
-
-    //comdidtional rerendering
-    //if restaurant is emoty => shimmer UI
-    //if restaurant has data => actual data UI
-    //not render component (Early component)
-
     
     if (!allRestaurants) return null;
 
-    // if (filteredRestaurants?.length===0)
-    //   return <h1> no Restaurant match your Filter!!</h1>;
 
     return allRestaurants?.length === 0 ? (
       <Shimmer/> 
     ) : (
       <>
-      <div className="my-0.5  bg-orange-100">
+      <div className="my-2 gap-0 flex items-center justify-center">
         <input 
             data-testid="search-input"
             type="text" 
-            className=" shadow-md search-input p-2 focus:bg-slate-200 mx-4"
+            className=" shadow-md search-input p-2 focus:bg-slate-200  rounded-l-lg"
             placeholder="Search"
             value={searchText}
             onChange={(e)=>{
-                // e.target.value => whatever you write in the box
                 setSearchText(e.target.value);
             }}
         />
         <button
           data-testid="search-btn"
-          className="p-2 m-2 bg-orange-500 text-white  hover:bg-neutral-600"
+          className="p-2  bg-orange-500 shadow-md text-white  hover:bg-neutral-600 rounded-r-lg"
           onClick={()=>{
             const data = filterData(searchText,allRestaurants);
             setFilteredRestaurants(data);
           }}
           >
           search</button>
-          {/* <input value={user.name} onChange={
-            e => setUser({
-              name : e.target.value,
-              email : "newemail@gmail.com"
-            })
-          }></input> */}
+
       </div>
 
-      <div className="flex flex-wrap ml-8 mt-6 " data-testid="res-list">
+      <div className="flex flex-wrap ml-36 mt-6 " data-testid="res-list">
         {filteredRestaurants.map((restaurant) => {
             return(
             <Link 
