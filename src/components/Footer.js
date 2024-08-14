@@ -37,7 +37,7 @@ const Footer = () => {
                     <div className="w-full md:w-1/3">
                         <h3 className="text-base font-bold mb-2">About Us</h3>
                         <p className="mb-2">We are dedicated to bringing the best food delivery experience to your doorstep. Explore a variety of restaurants and cuisines from the comfort of your home.</p>
-                        <p>&copy; {new Date().getFullYear()} FoodieApp. All rights reserved</p>
+                        <p>&copy; {new Date().getFullYear()} Swiggy. All rights reserved</p>
                     </div>
 
                     {/* Follow Us */}

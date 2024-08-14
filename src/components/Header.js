@@ -32,16 +32,13 @@ const Header = () =>{
     return (
         <div className="flex items-center justify-between bg-gray-800 text-white shadow-md p-3">
             <Title />
-            <nav className="flex items-center">
-                <ul className="flex space-x-4">
+            <nav className="flex flex-grow -ml-20 justify-center">
+                <ul className="flex space-x-4 items-center">
                     <li>
                         <Link className="hover:text-yellow-300" to="/">Home</Link>
                     </li>
                     <li>
                         <Link className="hover:text-yellow-300" to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link className="hover:text-yellow-300" to="/contact">Contact</Link>
                     </li>
                     <li>
                         <Link className="hover:text-yellow-300" to="/instamart">Instamart</Link>
@@ -57,6 +54,7 @@ const Header = () =>{
             </div>
         </div>
     );
+    
 };
 
 export default Header;

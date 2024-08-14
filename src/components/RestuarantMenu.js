@@ -53,7 +53,7 @@ const RestaurantMenu = () => {
       {menuInfo.length == 0 ? (
         <>
           <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            No Menus for this webiste !
+            No Menus for this website !
           </div>
         </>
       ) : (

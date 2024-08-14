@@ -42,11 +42,11 @@ const Body = () =>{
       <Shimmer/> 
     ) : (
       <>
-      <div className="my-2 gap-0 flex items-center justify-center">
+      <div className="mt-4 gap-0 flex  items-center justify-center">
         <input 
             data-testid="search-input"
             type="text" 
-            className=" shadow-md search-input p-2 focus:bg-slate-200  rounded-l-lg"
+            className="border-2 border-slate-200 shadow-md search-input p-2 focus:bg-slate-200  rounded-l-lg"
             placeholder="Search"
             value={searchText}
             onChange={(e)=>{
@@ -55,7 +55,7 @@ const Body = () =>{
         />
         <button
           data-testid="search-btn"
-          className="p-2  bg-orange-500 shadow-md text-white  hover:bg-neutral-600 rounded-r-lg"
+          className="p-2 border-2 border-slate-200 bg-orange-500 shadow-md text-white  hover:bg-neutral-600 rounded-r-lg"
           onClick={()=>{
             const data = filterData(searchText,allRestaurants);
             setFilteredRestaurants(data);
@@ -64,21 +64,24 @@ const Body = () =>{
           search</button>
 
       </div>
-
-      <div className="flex flex-wrap ml-36 mt-6 " data-testid="res-list">
-        {filteredRestaurants.map((restaurant) => {
-            return(
-            <Link 
-              to={"/restaurant/"+ restaurant?.info?.id}
-              key={restaurant.data}>
-              <RestaurantCard {...restaurant.info} key={restaurant.info.id}/> 
-            </Link>
-            );
-  
-          })
-        }
+      
+      <div className="flex justify-center items-center ">
+        <div className=" m-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4" data-testid="res-list">
+          {filteredRestaurants.map((restaurant) => {
+              return(
+              <Link 
+                to={"/restaurant/"+ restaurant?.info?.id}
+                key={restaurant.data}>
+                <RestaurantCard {...restaurant.info} key={restaurant.info.id}/> 
+              </Link>
+              );
     
+            })
+          }
+      
+        </div>
       </div>
+
       </>
      );
   };
