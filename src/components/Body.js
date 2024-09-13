@@ -21,12 +21,12 @@ const Body = () =>{
         },[])
     
         async function getRestaurants(){
-          const data = await fetch("http://localhost:5000/card");
+          const data = await fetch("https://sujin-a-s.github.io/host-api/restaurants");
           console.log("own ",data)
           const json = await data.json();
           console.log("details of all the res",json);
-          setAllRestaurants(json.card?.gridElements?.infoWithStyle?.restaurants);
-          setFilteredRestaurants(json.card?.gridElements?.infoWithStyle?.restaurants);
+          setAllRestaurants(json.card?.card?.gridElements?.infoWithStyle?.restaurants);
+          setFilteredRestaurants(json.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
         }
 
